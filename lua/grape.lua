@@ -93,7 +93,11 @@ v.g.terminal_color_15 = Grape.comment
 -- Vim Editor Color --
 ----------------------
 Group.new('Normal', c.fg, c.bg, no)
-Group.new('Cursor', c.bg, c.fg, no)
+Group.new('Italic', c.none, c.none, i)
+Group.new('bold', c.none, c.none, b)
+Group.new('Cursor', c.none, c.fg, no)
+Group.new('CursorIM', c.none, c.none, no)
+Group.new('Conceal', c.fg, c.bg, no)
 Group.new('CursorLine', c.none, c.bg2, no)
 Group.new('CursorLineNr', c.str, c.bg, no)
 Group.new('CursorColumn', c.none, c.bg2, no)
@@ -118,7 +122,7 @@ Group.new('WildMenu', c.str, c.bg, no)
 ----------------------------------
 Group.new('Boolean', c.const, c.none, no)
 Group.new('Character', c.const, c.none, no)
-Group.new('Comment', c.comment, c.none, i)
+Group.new('Comment', c.none, c.comment, i)
 Group.new('Conditional', c.keyword, c.none, no)
 Group.new('Constant', c.const, c.none, no)
 Group.new('Todo', c.bg, c.none, no)
