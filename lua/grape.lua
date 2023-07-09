@@ -18,6 +18,29 @@ local v = vim
 
 v.g.colors_name = 'grape'
 
+
+-------------------------
+-- Theme Colors --
+-------------------------
+Color.new('background', '#2D2B55')
+Color.new('background_dark', '#1E1E3F')
+Color.new('foreground', '#A599E9')
+Color.new('hover_background', '#4D21FC')
+Color.new('contrast', '#FAD000')
+Color.new('contrast_lite', '#FFEE80')
+Color.new('contrast_lite_2', '#FAEFA5')
+Color.new('highlight', '#FF7200')
+Color.new('comment', '#B362FF')
+Color.new('constants', '#FF628C')
+Color.new('keywords', '#FF9D00')
+Color.new('other', '#9EFFFF')
+Color.new('strings', '#A5FF90')
+Color.new('templates', '#3AD900')
+Color.new('definitions', '#FB94FF')
+Color.new('invalid', '#EC3A37F5')
+Color.new('diff_added', '#00FF009A')
+Color.new('diff_removed', '#FF000D81')
+
 -------------------------
 -- Vim Primary Colors --
 -------------------------
@@ -38,7 +61,7 @@ Color.new('DarkMagenta', '#e84393')
 Color.new('Black', '#2d3436')
 Color.new('Grey', '#636e72')
 Color.new('White',  '#dfe6e9')
-Color.new('Cyan', '#8abeb7')
-Color.new('DarkCyan', '#80a0ff')
+Color.new('Cyan', '#81ecec')
+Color.new('DarkCyan', '#00cec9')
 Color.new('Aqua', '#8ec07c')
 Color.new('pink', "#d291e4")
