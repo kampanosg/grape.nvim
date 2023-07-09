@@ -39,3 +39,25 @@ local no = s.NONE
 local v = vim
 
 v.g.colors_name = 'grape'
+
+
+
+-------------------------
+-- Vim Terminal Colors --
+-------------------------
+v.g.terminal_color_0 = Grape.bg
+v.g.terminal_color_1 = Grape.warning
+v.g.terminal_color_2 = Grape.keyword
+v.g.terminal_color_3 = Grape.bg4
+v.g.terminal_color_4 = Grape.func
+v.g.terminal_color_5 = Grape.builtin
+v.g.terminal_color_6 = Grape.fg3
+v.g.terminal_color_7 = Grape.str
+v.g.terminal_color_8 = Grape.bg2
+v.g.terminal_color_9 = Grape.warning2
+v.g.terminal_color_10 = Grape.fg2
+v.g.terminal_color_11 = Grape.var
+v.g.terminal_color_12 = Grape.type
+v.g.terminal_color_13 = Grape.const
+v.g.terminal_color_14 = Grape.fg4
+v.g.terminal_color_15 = Grape.comment
