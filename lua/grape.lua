@@ -109,7 +109,7 @@ Group.new('Pmenu', c.fg, c.bg2, no)
 Group.new('PmenuSel', c.none, c.bg3, no)
 Group.new('IncSearch', c.bg, c.keyword, no)
 Group.new('Search', c.none, c.none, ul)
-Group.new('Directory', c.const, no, no)
+Group.new('Directory', c.const, c.none, no)
 Group.new('Folded', c.fg4, c.bg, no)
 Group.new('WildMenu', c.str, c.bg, no)
 
