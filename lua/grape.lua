@@ -16,30 +16,31 @@ local sto = s.standout
 local no = s.NONE
 local v = vim
 
+v.opt.background = 'dark'
 v.g.colors_name = 'grape'
 
 
 -------------------------
 -- Theme Colors --
 -------------------------
-Color.new('background', '#2D2B55')
-Color.new('background_dark', '#1E1E3F')
-Color.new('foreground', '#A599E9')
-Color.new('hover_background', '#4D21FC')
-Color.new('contrast', '#FAD000')
-Color.new('contrast_lite', '#FFEE80')
-Color.new('contrast_lite_2', '#FAEFA5')
-Color.new('highlight', '#FF7200')
-Color.new('comment', '#B362FF')
-Color.new('constants', '#FF628C')
-Color.new('keywords', '#FF9D00')
-Color.new('other', '#9EFFFF')
-Color.new('strings', '#A5FF90')
-Color.new('templates', '#3AD900')
-Color.new('definitions', '#FB94FF')
-Color.new('invalid', '#EC3A37F5')
-Color.new('diff_added', '#00FF009A')
-Color.new('diff_removed', '#FF000D81')
+Color.new('gr_purple', '#B362FF')
+Color.new('gr_purple_dark_1', '#2D2B55')
+Color.new('gr_purple_dark_2', '#1E1E3F')
+Color.new('gr_purple_light', '#A599E9')
+Color.new('gr_blue', '#4D21FC')
+Color.new('gr_yellow', '#FAD000')
+Color.new('gr_yellow_light_1', '#FFEE80')
+Color.new('gr_yellow_light_2', '#FAEFA5')
+Color.new('gr_orange', '#FF7200')
+Color.new('gr_pink', '#FF628C')
+Color.new('gr_orange_light', '#FF9D00')
+Color.new('gr_cyan', '#9EFFFF')
+Color.new('gr_green', '#3AD900')
+Color.new('gr_green_light_1', '#A5FF90')
+Color.new('gr_green_light_2', '#00FF009A')
+Color.new('gr_magenta', '#FB94FF')
+Color.new('gr_red_1', '#EC3A37F5')
+Color.new('gr_red_2', '#FF000D81')
 
 -------------------------
 -- Vim Primary Colors --
@@ -64,4 +65,4 @@ Color.new('White',  '#dfe6e9')
 Color.new('Cyan', '#81ecec')
 Color.new('DarkCyan', '#00cec9')
 Color.new('Aqua', '#8ec07c')
-Color.new('pink', "#d291e4")
+Color.new('Pink', "#d291e4")
