@@ -122,7 +122,7 @@ Group.new('WildMenu', c.str, c.bg, no)
 ----------------------------------
 Group.new('Boolean', c.const, c.none, no)
 Group.new('Character', c.const, c.none, no)
-Group.new('Comment', c.none, c.comment, i)
+Group.new('Comment', c.bg, c.comment, i)
 Group.new('Conditional', c.keyword, c.none, no)
 Group.new('Constant', c.const, c.none, no)
 Group.new('Todo', c.bg, c.none, no)
