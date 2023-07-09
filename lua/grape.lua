@@ -6,28 +6,28 @@
 -- License:      MIT
 
 local Grape = {
-    bg = '#2D2B55',
+    bg = '#2d2b55',
     bg2 = '#3e3c63',
     bg3 = '#4f4d70',
     bg4 = '#5f5e7e',
-    fg = '#A599E9',
+    fg = '#a599e9',
     fg2 = '#988dd6',
     fg3 = '#8b81c4',
     fg4 = '#7d74b1',
-    keyword = '#FF9D00',
-    builtin = '#FAD000',
-    const = '#9EFFFF',
-    comment = '#B362FF',
-    func = '#FAD000',
-    str = '#A5FF90',
-    type = '#FF9D00',
-    var = '#9EFFFF',
-    warning = '#EC3A37',
-    warning2 = '#FF000D',
-    diffadd = '#00B894',
-    diffremove = '#D63031',
-    diffchange = '#0984E3',
-    white = '#DFE6E9',
+    keyword = '#ff9d00',
+    builtin = '#fad000',
+    const = '#9effff',
+    comment = '#b362ff',
+    func = '#fad000',
+    str = '#a5f90',
+    type = '#ff9d00',
+    var = '#9effff',
+    warning = '#ec3a37',
+    warning2 = '#ff000d',
+    diffadd = '#00b894',
+    diffremove = '#d63031',
+    diffchange = '#0984e3',
+    white = '#dfe6e9',
 }
 
 local Color, c, Group, g, s = require("colorbuddy").setup()
@@ -123,9 +123,9 @@ Group.new('Conditional', c.keyword, c.none, no)
 Group.new('Constant', c.const, c.none, no)
 Group.new('Todo', c.bg, c.none, no)
 Group.new('Define', c.keyword, c.none, no)
-Group.new('DiffAdd', c.diffadd, c.none, no)
-Group.new('DiffDelete', c.diffremove, c.none, no)
-Group.new('DiffChange', c.diffchange, c.none, no)
+Group.new('DiffAdd', c.diffadd, c.dffadd, no)
+Group.new('DiffDelete', c.diffremove, c.diffremove, no)
+Group.new('DiffChange', c.diffchange, c.diffchange, no)
 Group.new('DiffText', c.white, c.diffremove, b)
 Group.new('ErrorMsg', c.warning, c.bg2, b)
 Group.new('WarningMsg', c.fg, c.warning2, no)
