@@ -59,7 +59,7 @@ local sto = s.standout
 local no = s.NONE
 local v = vim
 
-v.o.background = Grape.bg
+v.o.background = 'dark'
 v.g.colors_name = 'grape'
 
 -------------------------
