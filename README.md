@@ -5,7 +5,11 @@ A deep purple modern theme for Neovim. Comes in a single colorscheme. Inspired b
 :warning: This is still under active development and things might change or be broken. Feel free to report any issues that you might find.
 
 ## Demo
-The theme in action with some Golang code
+### Golang
+![](./screenshots/go.png)
+
+### Rust
+![](./screenshots/rust.png)
 
 ## Usage
 
