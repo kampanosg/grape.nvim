@@ -59,8 +59,11 @@ local sto = s.standout
 local no = s.NONE
 local v = vim
 
-v.o.background = 'dark'
+v.cmd "hi clear"
+
 v.g.colors_name = 'grape'
+v.opt.background = 'dark'
+v.opt.termguicolors = true
 
 -------------------------
 -- Theme Colors --
