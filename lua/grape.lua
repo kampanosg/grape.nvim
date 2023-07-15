@@ -6,28 +6,46 @@
 -- License:      MIT
 
 local Grape = {
-    bg = '#2d2b55',
-    bg2 = '#3e3c63',
-    bg3 = '#4f4d70',
-    bg4 = '#5f5e7e',
-    fg = '#a599e9',
-    fg2 = '#988dd6',
-    fg3 = '#8b81c4',
-    fg4 = '#7d74b1',
-    keyword = '#ff9d00',
-    builtin = '#fad000',
-    const = '#9effff',
-    comment = '#b362ff',
-    func = '#fad000',
-    str = '#a5ff90',
-    type = '#ff9d00',
-    var = '#9effff',
-    warning = '#ec3a37',
-    warning2 = '#ff000d',
+    -- bg = '#2d2b55',
+    -- bg2 = '#3e3c63',
+    -- bg3 = '#4f4d70',
+    -- bg4 = '#5f5e7e',
+    -- fg = '#a599e9',
+    -- fg2 = '#988dd6',
+    -- fg3 = '#8b81c4',
+    -- fg4 = '#7d74b1',
+    -- keyword = '#ff9d00',
+    -- builtin = '#fad000',
+ -- const = '#9effff',
+    -- comment = '#b362ff',
+    -- func = '#fad000',
+    -- str = '#a5ff90',
+    -- type = '#ff9d00',
+    -- var = '#9effff',
+    -- warning = '#ec3a37',
+    -- warning2 = '#ff000d',
     diffadd = '#00b894',
     diffremove = '#d63031',
     diffchange = '#0984e3',
     white = '#dfe6e9',
+bg="#2D2B55",
+fg="#A599E9",
+fg2="#988dd6",
+fg3="#8b81c4",
+fg4="#7d74b1",
+bg2="#3e3c63",
+bg3="#4f4d70",
+bg4="#5f5e7e",
+keyword="#FF7200",
+builtin="#FAD000",
+const= "#FB94FF",
+comment="#b064f7",
+func="#FFEE80",
+str="#A5FF90",
+type="#dfe6e9",
+var="#9EFFFF",
+warning="#EC3A37",
+warning2 = "#FAEFA5"
 }
 
 local Color, c, Group, g, s = require("colorbuddy").setup()
@@ -156,3 +174,13 @@ Group.new('DiffAdd', c.diffadd, c.diffadd)
 Group.new('DiffDelete', c.diffremove, c.diffremove)
 Group.new('DiffChange', c.diffchange, c.diffchange)
 Group.new('DiffText', c.white, c.diffremove, b)
+
+----------------------------------
+-- NeoVim Highlighting --
+----------------------------------
+Group.new("healthError", c.fg, c.warning)
+Group.new("healthSuccess", c.fg, c.diffadd)
+Group.new("healthWarning", c.fg, c.warning2)
+Group.new("TermCursorNC", c.fg, c.builtin)
+Group.new("IncSearch", c.fg2, c.bg2, ul)
+Group.new("Search", c.fg3, c.bg3)
