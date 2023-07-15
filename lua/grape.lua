@@ -1,5 +1,4 @@
--- Name:         Grape
--- Description:  A modern dark purple theme
+-- Description:  A dark purple theme
 -- Author:       kampanosg <kampanosg@outlook.com>
 -- Maintainer:   kampanosg <kampanosg@outlook.com>
 -- Website:      httpc.//github.com/kampanosg/grape.nvim
@@ -25,8 +24,8 @@ local Grape = {
     warning="#EC3A37",
     warning2 = "#FAEFA5",
     diffadd = '#00b894',
-    diffremove = '#d63031',
-    diffchange = '#0984e3',
+    diffremove = '#ff7675',
+    diffchange = '#74b9ff',
     white = '#dfe6e9',
     defs = "#FF628C",
 }
@@ -42,6 +41,8 @@ v.cmd 'hi clear'
 v.g.colors_name = 'grape'
 v.opt.background = 'dark'
 v.opt.termguicolors = true
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
+
 
 -------------------------
 -- Theme Colors --
@@ -96,16 +97,16 @@ v.g.terminal_color_15 = Grape.comment
 Group.new('Normal', c.fg, c.bg)
 Group.new('Italic', c.none, c.none, i)
 Group.new('Bold', c.none, c.none, b)
-Group.new('Cursor', c.none, c.fg)
-Group.new('CursorIM', c.none, c.none)
-Group.new('Conceal', c.fg, c.bg)
-Group.new('CursorLine', c.none, c.bg2)
-Group.new('CursorLineNr', c.str, c.bg)
-Group.new('CursorColumn', c.none, c.bg2)
+Group.new('CursorColumn', c.none, c.bg2) -- the screen column that the cursor is in when 'cursorcolumn' is set
+Group.new('Cursor', c.none, c.fg) -- the character under the cursor
+Group.new('CursorIM', c.none, c.none) -- like Cursor, but used when in IME mode
+Group.new('CursorLine', c.none, c.bg2) -- the screen line that the cursor is in when 'cursorline' is set
+Group.new('CursorLineNr', c.str, c.bg) --like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+Group.new('LineNr', c.fg2, c.bg2) -- line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 Group.new('ColorColumn', c.none, c.bg2)
-Group.new('FoldColumn', c.comment, c.bg)
-Group.new('SignColumn', c.comment, c.bg2)
-Group.new('LineNr', c.fg2, c.bg2)
+Group.new('Conceal', c.fg, c.bg)
+Group.new('FoldColumn')
+Group.new('SignColumn', c.none, c.bg2)
 Group.new('CursorLineNr', c.fg, c.bg2)
 Group.new('VertSplit', c.fg3, c.bg3)
 Group.new('MatchParen', c.warning2, c.none, ul + b)
@@ -115,8 +116,9 @@ Group.new('PmenuSel', c.none, c.bg3)
 Group.new('Directory', c.const, c.none)
 Group.new('Folded', c.fg4, c.bg)
 Group.new('WildMenu', c.str, c.bg)
-Group.new("Visual", c.fg3, c.var) -- Visual mode selection
-Group.new("VisualNOS", c.none, c.var) -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+Group.new("Visual", c.fg3, c.var) -- visual mode selection
+Group.new("VisualNOS", c.none, c.var) -- visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+Group.new("SpellBad", c.warning2, c.none, ul)  -- word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 
 ----------------------------------
 -- Standard Syntax Highlighting --
@@ -148,24 +150,25 @@ Group.new('Tag', c.keyword)
 Group.new('Title', c.fg)
 Group.new('Type', c.type)
 Group.new('Underlined', c.none, c.none, ul)
+Group.new("Error", c.diffremove, c.none, ul) -- any erroneous construct
 
 ----------------------------------
 -- Standard Syntax Highlighting --
 ----------------------------------
-Group.new('DiffAdd', c.diffadd, c.diffadd)
-Group.new('DiffDelete', c.diffremove, c.diffremove)
-Group.new('DiffChange', c.diffchange, c.diffchange)
-Group.new('DiffText', c.white, c.diffremove, b)
+Group.new('DiffAdd', c.diffadd, c.bg2)
+Group.new('DiffDelete', c.diffremove, c.bg2)
+Group.new('DiffChange', c.diffchange, c.bg2)
+Group.new('DiffText', c.white, c.bg2, b)
 
 ----------------------------------
 -- NeoVim Highlighting --
 ----------------------------------
-Group.new("healthError", c.fg, c.warning)
-Group.new("healthSuccess", c.fg, c.diffadd)
-Group.new("healthWarning", c.fg, c.warning2)
+Group.new("healthError", c.warning)
+Group.new("healthSuccess", c.diffadd)
+Group.new("healthWarning", c.warning2)
 Group.new("TermCursorNC", c.fg, c.builtin)
-Group.new("IncSearch", c.white, c.const, ul)
-Group.new("Search", c.white, c.const)
+Group.new("IncSearch", c.bg3, c.const, ul)
+Group.new("Search", c.fg3, c.const)
 
 ----------------------------------
 -- Treesitter Syntax Highlighting--
@@ -232,3 +235,16 @@ Group.new('@variable.builtin', c.fg)
 Group.new('@lsp.type.function', c.const)
 Group.new('@lsp.type.macro', c.fg)
 Group.new('@lsp.type.method', c.func)
+
+----------------------------------
+-- Plugin: GitSigns --
+----------------------------------
+Group.new('GitSignsAdd', c.diffadd, c.bg2)
+Group.new('GitSignsChange', c.diffchange, c.bg2)
+Group.new('GitSignsDelete', c.diffremove, c.bg2)
+Group.new('GitSignsAddNr', c.diffadd)
+Group.new('GitSignsAddLn', c.diffadd)
+Group.new('GitSignsChangeNr', c.diffchange, c.bg2)
+Group.new('GitSignsChangeLn', c.diffchange)
+Group.new('GitSignsDeleteNr', c.diffremove, c.bg2)
+Group.new('GitSignsDeleteLn', c.diffremove)
