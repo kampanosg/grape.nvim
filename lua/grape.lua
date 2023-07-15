@@ -1,5 +1,5 @@
 -- Name:         Grape
--- Description:  A dark purple theme
+-- Description:  A modern dark purple theme
 -- Author:       kampanosg <kampanosg@outlook.com>
 -- Maintainer:   kampanosg <kampanosg@outlook.com>
 -- Website:      httpc.//github.com/kampanosg/grape.nvim
@@ -112,11 +112,11 @@ Group.new('MatchParen', c.warning2, c.none, ul + b)
 Group.new('StatusLine', c.fg2, c.bg3, b)
 Group.new('Pmenu', c.fg, c.bg2)
 Group.new('PmenuSel', c.none, c.bg3)
-Group.new('IncSearch', c.bg, c.keyword)
-Group.new('Search', c.none, c.none, ul)
 Group.new('Directory', c.const, c.none)
 Group.new('Folded', c.fg4, c.bg)
 Group.new('WildMenu', c.str, c.bg)
+Group.new("Visual", c.fg3, c.var) -- Visual mode selection
+Group.new("VisualNOS", c.none, c.var) -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 
 ----------------------------------
 -- Standard Syntax Highlighting --
@@ -164,8 +164,8 @@ Group.new("healthError", c.fg, c.warning)
 Group.new("healthSuccess", c.fg, c.diffadd)
 Group.new("healthWarning", c.fg, c.warning2)
 Group.new("TermCursorNC", c.fg, c.builtin)
-Group.new("IncSearch", c.fg2, c.bg2, ul)
-Group.new("Search", c.fg3, c.bg3)
+Group.new("IncSearch", c.white, c.const, ul)
+Group.new("Search", c.white, c.const)
 
 ----------------------------------
 -- Treesitter Syntax Highlighting--
