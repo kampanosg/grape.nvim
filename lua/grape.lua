@@ -6,60 +6,37 @@
 -- License:      MIT
 
 local Grape = {
-    -- bg = '#2d2b55',
-    -- bg2 = '#3e3c63',
-    -- bg3 = '#4f4d70',
-    -- bg4 = '#5f5e7e',
-    -- fg = '#a599e9',
-    -- fg2 = '#988dd6',
-    -- fg3 = '#8b81c4',
-    -- fg4 = '#7d74b1',
-    -- keyword = '#ff9d00',
-    -- builtin = '#fad000',
- -- const = '#9effff',
-    -- comment = '#b362ff',
-    -- func = '#fad000',
-    -- str = '#a5ff90',
-    -- type = '#ff9d00',
-    -- var = '#9effff',
-    -- warning = '#ec3a37',
-    -- warning2 = '#ff000d',
+    bg="#2D2B55",
+    fg="#A599E9",
+    fg2="#988dd6",
+    fg3="#8b81c4",
+    fg4="#7d74b1",
+    bg2="#3e3c63",
+    bg3="#4f4d70",
+    bg4="#5f5e7e",
+    keyword="#FF7200",
+    builtin="#FAD000",
+    const= "#FB94FF",
+    comment="#b064f7",
+    func="#FFEE80",
+    str="#A5FF90",
+    type="#dfe6e9",
+    var="#9EFFFF",
+    warning="#EC3A37",
+    warning2 = "#FAEFA5",
     diffadd = '#00b894',
     diffremove = '#d63031',
     diffchange = '#0984e3',
     white = '#dfe6e9',
-bg="#2D2B55",
-fg="#A599E9",
-fg2="#988dd6",
-fg3="#8b81c4",
-fg4="#7d74b1",
-bg2="#3e3c63",
-bg3="#4f4d70",
-bg4="#5f5e7e",
-keyword="#FF7200",
-builtin="#FAD000",
-const= "#FB94FF",
-comment="#b064f7",
-func="#FFEE80",
-str="#A5FF90",
-type="#dfe6e9",
-var="#9EFFFF",
-warning="#EC3A37",
-warning2 = "#FAEFA5"
 }
 
 local Color, c, Group, g, s = require("colorbuddy").setup()
 local b = s.bold
 local i = s.italic
-local n = s.inverse
-local uc = s.undercurl
 local ul = s.underline
-local r = s.reverse
-local sto = s.standout
-local no = s.NONE
 local v = vim
 
-v.cmd "hi clear"
+v.cmd 'hi clear'
 
 v.g.colors_name = 'grape'
 v.opt.background = 'dark'
@@ -116,7 +93,7 @@ v.g.terminal_color_15 = Grape.comment
 ----------------------
 Group.new('Normal', c.fg, c.bg)
 Group.new('Italic', c.none, c.none, i)
-Group.new('bold', c.none, c.none, b)
+Group.new('Bold', c.none, c.none, b)
 Group.new('Cursor', c.none, c.fg)
 Group.new('CursorIM', c.none, c.none)
 Group.new('Conceal', c.fg, c.bg)
@@ -187,3 +164,69 @@ Group.new("healthWarning", c.fg, c.warning2)
 Group.new("TermCursorNC", c.fg, c.builtin)
 Group.new("IncSearch", c.fg2, c.bg2, ul)
 Group.new("Search", c.fg3, c.bg3)
+
+----------------------------------
+-- Treesitter Syntax Highlighting--
+----------------------------------
+Group.new('@boolean', c.const)
+Group.new('@character', c.const)
+Group.new('@character.special', c.const)
+Group.new('@comment', c.comment)
+Group.new('@conditional', c.keyword)
+Group.new('@constant', c.const)
+Group.new('@constant.builtin', c.const)
+Group.new('@constant.macro', c.const)
+Group.new('@constructor', c.const)
+Group.new('@debug', c.const)
+Group.new('@define', c.keyword)
+Group.new('@exception', c.keyword)
+Group.new('@field', c.keyword)
+Group.new('@float', c.const)
+Group.new('@function', c.func)
+Group.new('@function.builtin', c.builtin)
+Group.new('@function.call', c.func)
+Group.new('@function.macro', c.func)
+Group.new('@include', c.var)
+Group.new('@keyword', c.keyword)
+Group.new('@keyword.function', c.keyword)
+Group.new('@keyword.operator', c.keyword)
+Group.new('@keyword.return', c.const)
+Group.new('@label', c.fg)
+Group.new('@macro', c.fg)
+Group.new('@method', c.func)
+Group.new('@method.call', c.func)
+Group.new('@namespace', c.fg)
+Group.new('@none', c.fg)
+Group.new('@number', c.warning)
+Group.new('@operator', c.const)
+Group.new('@parameter', c.white)
+Group.new('@preproc', c.white)
+Group.new('@property', c.white)
+Group.new('@punctuation', c.white)
+Group.new('@punctuation.bracket', c.func)
+Group.new('@punctuation.delimiter', c.func)
+Group.new('@punctuation.special', c.func)
+Group.new('@repeat', c.fg)
+Group.new('@storageclass', c.fg)
+Group.new('@string', c.str)
+Group.new('@string.escape', c.keyword)
+Group.new('@string.special', c.keyword)
+Group.new('@structure', c.keyword)
+Group.new('@tag', c.white)
+Group.new('@tag.attribute', c.white)
+Group.new('@tag.delimiter', c.white)
+Group.new('@text.literal', c.white)
+Group.new('@text.reference', c.white)
+Group.new('@text.title', c.white)
+Group.new('@text.todo', c.const)
+Group.new('@text.underline', c.white)
+Group.new('@text.uri', c.fg)
+Group.new('@type', c.type)
+Group.new("@identifier", c.white)
+Group.new('@type.builtin', c.builtin)
+Group.new('@type.definition', c.white)
+Group.new('@variable', c.var)
+Group.new('@variable.builtin', c.builtin)
+Group.new('@lsp.type.function', c.func)
+Group.new('@lsp.type.macro', c.white)
+Group.new('@lsp.type.method', c.func)
