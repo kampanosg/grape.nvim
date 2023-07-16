@@ -143,7 +143,7 @@ Group.new('Function', c.func)
 Group.new('Identifier', c.type)
 Group.new('Keyword', c.keyword)
 Group.new('Label', c.var)
-Group.new('NonText', c.bg2) -- '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+Group.new('NonText', c.main4) -- used by git-signs blame
 Group.new('Number', c.defs)
 Group.new('Operator', c.keyword)
 Group.new('PreProc', c.keyword)
