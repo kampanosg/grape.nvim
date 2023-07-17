@@ -13,13 +13,15 @@ A deep-purple modern theme for Neovim. Comes in a single colour scheme. Inspired
 
 ## Usage
 
-Add the theme to your Packer config and enable it
+Add the theme to your Packer config
 ```lua
 use {
     'kampanosg/grape.nvim',
     requires = 'tjdevries/colorbuddy.vim',
-    config = function ()
-        require('colorbuddy').colorscheme('grape')
-    end
 }
+```
+
+ To enable it
+ ```lua
+require('colorbuddy').colorscheme('grape')
 ```
