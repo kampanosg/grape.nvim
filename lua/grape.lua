@@ -7,13 +7,13 @@
 
 local Grape = {
     bg="#2D2B55",
+    bg2="#3e3c63",
+    bg3="#4f4d70",
+    bg4="#5f5e7e",
     main="#A599E9",
     main2="#988dd6",
     main3="#8b81c4",
     main4="#7d74b1",
-    bg2="#3e3c63",
-    bg3="#4f4d70",
-    bg4="#5f5e7e",
     keyword="#FF7200",
     builtin="#FAD000",
     const= "#FB94FF",
@@ -37,13 +37,28 @@ local i = s.italic
 local ul = s.underline
 local v = vim
 
-v.cmd 'hi clear'
+v.opt.background = "dark"
+v.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
 
-v.g.colors_name = 'grape'
-v.opt.background = 'dark'
-v.opt.termguicolors = true
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-
+-------------------------
+-- Vim Terminal Colors --
+-------------------------
+v.g.terminal_color_0 = Grape.bg
+v.g.terminal_color_1 = Grape.warning
+v.g.terminal_color_2 = Grape.keyword
+v.g.terminal_color_3 = Grape.bg4
+v.g.terminal_color_4 = Grape.func
+v.g.terminal_color_5 = Grape.builtin
+v.g.terminal_color_6 = Grape.main3
+v.g.terminal_color_7 = Grape.str
+v.g.terminal_color_8 = Grape.bg2
+v.g.terminal_color_9 = Grape.warning2
+v.g.terminal_color_10 = Grape.main2
+v.g.terminal_color_11 = Grape.var
+v.g.terminal_color_12 = Grape.type
+v.g.terminal_color_13 = Grape.const
+v.g.terminal_color_14 = Grape.main4
+v.g.terminal_color_15 = Grape.comment
 
 -------------------------
 -- Theme Colors --
@@ -71,26 +86,6 @@ Color.new('diffremove', Grape.diffremove)
 Color.new('diffchange', Grape.diffchange)
 Color.new('white', Grape.white)
 Color.new('defs', Grape.defs)
-
--------------------------
--- Vim Terminal Colors --
--------------------------
-v.g.terminal_color_0 = Grape.bg
-v.g.terminal_color_1 = Grape.warning
-v.g.terminal_color_2 = Grape.keyword
-v.g.terminal_color_3 = Grape.bg4
-v.g.terminal_color_4 = Grape.func
-v.g.terminal_color_5 = Grape.builtin
-v.g.terminal_color_6 = Grape.main3
-v.g.terminal_color_7 = Grape.str
-v.g.terminal_color_8 = Grape.bg2
-v.g.terminal_color_9 = Grape.warning2
-v.g.terminal_color_10 = Grape.main2
-v.g.terminal_color_11 = Grape.var
-v.g.terminal_color_12 = Grape.type
-v.g.terminal_color_13 = Grape.const
-v.g.terminal_color_14 = Grape.main4
-v.g.terminal_color_15 = Grape.comment
 
 ----------------------
 -- Vim Editor Color --
@@ -155,7 +150,7 @@ Group.new('String', c.str)
 Group.new('Tag', c.keyword)
 Group.new('Title', c.main)
 Group.new('Type', c.type)
-Group.new('Underlined', c.none, c.none, ul)
+Group.new('Underlined', c.white, c.none, ul)
 Group.new("Error", c.diffremove, c.none, ul) -- any erroneous construct
 
 ----------------------------------
@@ -281,3 +276,21 @@ Group.new('CmpItemEnumMember', c.main2)
 Group.new('CmpItemOperator', c.builtin)
 Group.new('CmpItemReference', c.white)
 
+-- NvimTreeNormal           = { fg = e.fg, bg = b.sidebars },
+        -- NvimTreeNormalNC         = { link = "NvimTreeNormal" },
+        -- NvimTreeRootFolder       = { fg = e.accent, bg = b.sidebars },
+        -- NvimTreeFolderName       = { fg = m.blue, bold = true },
+        -- NvimTreeFolderIcon       = { link = "NvimTreeFolderName" },
+        -- NvimTreeEmptyFolderName  = { fg = m.gray },
+        -- NvimTreeOpenedFolderName = { fg = m.yellow, bold = true },
+        -- NvimTreeIndentMarker     = { fg = e.disabled },
+        -- NvimTreeGitDirty         = { fg = m.blue },
+        -- NvimTreeGitNew           = { fg = m.yellow },
+        -- NvimTreeGitStaged        = { fg = e.fg },
+        -- NvimTreeGitDeleted       = { fg = m.red },
+        -- NvimTreeOpenedFile       = { link = "NvimTreeGitNew" },
+        -- NvimTreeImageFile        = { fg = m.yellow },
+        -- NvimTreeMarkdownFile     = { fg = m.pink },
+        -- NvimTreeExecFile         = { link = "NvimTreeGitNew" },
+        -- NvimTreeSpecialFile      = { fg = m.purple },
+        -- NvimTreeWinSeparator     = { link = "WinSeparator" },
