@@ -13,11 +13,26 @@ A deep-purple modern theme for Neovim. Comes in a single colour scheme. Inspired
 
 ## Usage
 
+### Lazy
+
+```lua
+{
+    'kampanosg/grape.nvim',
+    dependencies = { 'tjdevries/colorbuddy.nvim' },
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require('colorbuddy').colorscheme('grape')
+    end
+}
+```
+
+### Packer
 Add the theme to your Packer config
 ```lua
 use {
     'kampanosg/grape.nvim',
-    requires = 'tjdevries/colorbuddy.vim',
+    requires = 'tjdevries/colorbuddy.nvim',
 }
 ```
 
